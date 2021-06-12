@@ -13,7 +13,6 @@ model = pickle.load(open('random_forest_regression_model.pkl', 'rb'))
 def Home():
     return render_template('index.html')
 
-
 standard_to = StandardScaler()
 @app.route("/predict", methods=['POST'])
 def predict():
