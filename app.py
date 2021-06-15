@@ -15,13 +15,13 @@ app = Flask(__name__)
 
 
 def predict():
-    Year = input("Enter the Model Year：", type=NUMBER)
+    Year = input("When Did you purchase your car (YEAR)：", type=NUMBER)
     Year = 2021 - Year
-    Present_Price = input("Enter the Present Price(in LAKHS)", type=FLOAT)
-    Kms_Driven = input("Enter the distance it has travelled(in KMS)：", type=FLOAT)
+    Present_Price = input("HOW MANY ROKDA'S WERE SPENT (in LAKHS)", type=FLOAT)
+    Kms_Driven = input("KITNA CHALLI HAI (in KMS)：", type=FLOAT)
     Kms_Driven2 = np.log(Kms_Driven)
-    Owner = input("Enter the number of owners who have previously owned it(0 or 1 or 2 or 3)", type=NUMBER)
-    Fuel_Type = select('What is the Fuel Type', ['Petrol', 'Diesel','CNG'])
+    Owner = input("NUMBER OF PEEPS OWNED THIS CAR BEFORE YOU (0 or 1 or 2 or 3)", type=NUMBER)
+    Fuel_Type = select('FUEL TYPE', ['Petrol', 'Diesel','CNG'])
     if (Fuel_Type == 'Petrol'):
         Fuel_Type = 239
 
@@ -30,13 +30,13 @@ def predict():
 
     else:
         Fuel_Type = 2
-    Seller_Type = select('Are you a dealer or an individual', ['Dealer', 'Individual'])
+    Seller_Type = select('YOU A BULK BUYER OR A LUXURY ONE', ['Dealer', 'Individual'])
     if (Seller_Type == 'Individual'):
         Seller_Type = 106
 
     else:
         Seller_Type = 195
-    Transmission = select('Transmission Type', ['Manual Car', 'Automatic Car'])
+    Transmission = select('ARE YOU INTO MUSCLES OR EV?', ['Manual Car', 'Automatic Car'])
     if (Transmission == 'Manual Car'):
         Transmission = 261
     else:
@@ -46,10 +46,10 @@ def predict():
     output = round(prediction[0], 2)
 
     if output < 0:
-        put_text("Sorry You can't sell this Car")
+        put_text("OOPS! SORRY, BUMMER - YOU CAN'T SOLD THIS CAR")
 
     else:
-        put_text('You can sell this Car at price:',output)
+        put_text('YOU CAN SELL THIS CAR AT THE BEST PRICE OF::',output)
 
 app.add_url_rule('/tool', 'webio_view', webio_view(predict),
             methods=['GET', 'POST', 'OPTIONS'])
