@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 
 def predict():
-    Year = input("When Did you purchase your car (YEAR)：", type=NUMBER)
+    Year = input("WHEN DID YOU BOUGHT YOUR CAR (YEAR)::", type=NUMBER)
     Year = 2021 - Year
     Present_Price = input("HOW MANY ROKDA'S WERE SPENT (in LAKHS)", type=FLOAT)
     Kms_Driven = input("KITNA CHALLI HAI (in KMS)：", type=FLOAT)
