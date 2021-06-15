@@ -6,11 +6,8 @@
 ---
 Tools & Libraries Used:
 - Python: 3.9.5
-- Libraries:
+- Libraries: 
         
-        * Matplotlib
-        * Numpy
-        * Pandas
-
+        editing right now.....
 
 ### created with [❤️] by @VivanVatsa
